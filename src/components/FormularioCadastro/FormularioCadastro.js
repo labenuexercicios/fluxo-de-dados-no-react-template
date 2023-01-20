@@ -1,22 +1,6 @@
-import { useState } from "react";
 import { FormContainer, Form, Input, StyledLabel } from "./styled";
 
-export const FormularioCadastro = () => {
-
-  const [linkImg, setLinkImg] = useState('');
-
-  const [descricao, setDescricao] = useState('');
-
-  function changeLinkImg (e){
-    setLinkImg(e.target.value);
-  }
-
-  function changeDescricao (e){
-    setDescricao(e.target.value);
-  }
-
-  console.log(linkImg);
-  console.log(descricao);
+export const FormularioCadastro = ({linkImg, changeLinkImg, descricao, changeDescricao}) => {
 
   return (
     <FormContainer>
@@ -34,6 +18,5 @@ export const FormularioCadastro = () => {
     </FormContainer>
   );
 };
-
 
 export default FormularioCadastro
