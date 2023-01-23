@@ -21,28 +21,28 @@ const Container = styled.div`
 
 function App() {
 
-  const [linkImg, setLinkImg] = useState('');
+  // const [linkImg, setLinkImg] = useState('');
   
-  const [descricao, setDescricao] = useState('');
+  // const [descricao, setDescricao] = useState('');
 
-  const [titulo, setTitulo] = useState('');
+  // const [titulo, setTitulo] = useState('');
 
-  // const [enviarDados, setEnviarDados] = useState('');
+  const [enviarDados, setEnviarDados] = useState({
+    titulo: '',
+    linkImg:'',
+    descricao:''
+  });
   
-  function changeLinkImg (e){
-    setLinkImg(e.target.value);
-  }
+  // function changeLinkImg (e){
+  //   setLinkImg(e.target.value);
+  // }
   
-  function changeDescricao (e){
-    setDescricao(e.target.value);
-  }
+  // function changeDescricao (e){
+  //   setDescricao(e.target.value);
+  // }
 
-  function changeTitulo (e){
-    setTitulo(e.target.value);
-  }
-
-  // function changeEnviarDados (e){
-  //   setEnviarDados()
+  // function changeTitulo (e){
+  //   setTitulo(e.target.value);
   // }
   
   // console.log(linkImg);
@@ -55,18 +55,20 @@ function App() {
         <aside>
           <Header />
           <FormularioCadastro 
-            linkImg={linkImg}
-            changeLinkImg={changeLinkImg}
-            descricao={descricao}
-            changeDescricao={changeDescricao}
-            titulo={titulo}
-            changeTitulo={changeTitulo}
+            // linkImg={linkImg}
+            // changeLinkImg={changeLinkImg}
+            // descricao={descricao}
+            // changeDescricao={changeDescricao}
+            // titulo={titulo}
+            // changeTitulo={changeTitulo}
+            setEnviarDados={setEnviarDados}
           />
         </aside>
           <TelaDaPostagem
-            linkImg={linkImg}
-            descricao={descricao}
-            titulo={titulo}
+            // linkImg={linkImg}
+            // descricao={descricao}
+            // titulo={titulo}
+            enviarDados={enviarDados}
           />
       </Container>
     </>

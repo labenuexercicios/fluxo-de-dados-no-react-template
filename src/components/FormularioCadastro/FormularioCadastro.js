@@ -1,6 +1,44 @@
 import { FormContainer, Form, Input, StyledLabel } from "./styled";
+import { useState } from "react";
 
-export const FormularioCadastro = ({linkImg, changeLinkImg, descricao, changeDescricao, titulo, changeTitulo}) => {
+// export const FormularioCadastro = ({linkImg, changeLinkImg, descricao, changeDescricao, titulo, changeTitulo, enviarDados, changeEnviarDados}) => {
+
+export const FormularioCadastro = ({enviarDados, setEnviarDados}) => {
+
+  const [linkImg, setLinkImg] = useState('');
+  
+  const [descricao, setDescricao] = useState('');
+
+  const [titulo, setTitulo] = useState('');
+
+  function changeLinkImg (e){
+    setLinkImg(e.target.value);
+  }
+  
+  function changeDescricao (e){
+    setDescricao(e.target.value);
+  }
+
+  function changeTitulo (e){
+    setTitulo(e.target.value);
+  }
+
+  function postar (e){
+    e.preventDefault();
+
+    const post = {
+      titulo: titulo,
+      linkImg: linkImg,
+      descricao: descricao
+    }
+
+    setEnviarDados(post);
+    setLinkImg('');
+    setTitulo('');
+    setDescricao('');
+    console.log(post);
+  }
+
 
   return (
     <FormContainer>
@@ -18,7 +56,7 @@ export const FormularioCadastro = ({linkImg, changeLinkImg, descricao, changeDes
           Descrição:
           <Input id="descricao" onChange={changeDescricao} value={descricao}/>
         </StyledLabel>
-        {/* <button onClick={enviarDados}>Enviar</button> */}
+        <button onClick={postar}>Enviar</button>
       </Form>
     </FormContainer>
   );
