@@ -7,10 +7,11 @@ export const FormularioCadastro = ({
   urlFoto,
   setUrlFoto,
   descricao,
-  setDescricao
+  setDescricao,
 }) => {
-
-  const onChangeUrlFoto = (e) => {setUrlFoto(e.target.value)}
+  const onChangeUrlFoto = (e) => {
+    setUrlFoto(e.target.value);
+  };
 
   return (
     <FormContainer>
@@ -18,29 +19,27 @@ export const FormularioCadastro = ({
       <Form>
         <StyledLabel>
           Título:
-          <Input 
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          id="title" />
+          <Input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            id="title"
+          />
         </StyledLabel>
         <StyledLabel htmlFor="foto">
           Imagem:
-          <Input 
-            value={urlFoto} 
-            onChange={onChangeUrlFoto} 
-            id="foto" />
+          <Input value={urlFoto} onChange={onChangeUrlFoto} id="foto" />
         </StyledLabel>
         <StyledLabel htmlFor="descricao">
           Descrição:
-          <Input 
-            value={descricao}  
-            onChange={(e) => setDescricao(e.target.value)} 
-            id="descricao" />
+          <Input
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+            id="descricao"
+          />
         </StyledLabel>
       </Form>
     </FormContainer>
   );
 };
 
-
-export default FormularioCadastro
+export default FormularioCadastro;
