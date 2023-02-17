@@ -40,3 +40,4 @@ export const StyledLabel = styled.label`
     align-items: center;
     justify-content: space-between;
 `
+

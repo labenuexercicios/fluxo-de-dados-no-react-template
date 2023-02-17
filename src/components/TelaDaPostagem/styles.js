@@ -20,4 +20,6 @@ export const Description = styled.p`
     max-width: 500px;
     padding-top: 1rem;
 `
-
+export const Titulo = styled.h2`
+font-family:Arial, Helvetica, sans-serif;
+`
